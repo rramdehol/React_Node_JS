@@ -10,7 +10,6 @@ class App extends Component {
     this.state = {
       movies:[]
     }
-
   }
   componentDidMount() {
     var url = "https://api.themoviedb.org/3/movie/now_playing?api_key=fec8b5ab27b292a68294261bb21b04a5";
