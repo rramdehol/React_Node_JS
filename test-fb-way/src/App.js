@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import $ from "jquery"
-import Movie from "./Movie"
+import $ from "jQuery"
+import Movie from "./movie"
 
 class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      movie:[]
+      movies:[]
     }
 
   }
@@ -22,6 +22,10 @@ class App extends Component {
     });
   }
   render() {
+    var moviePosters = [];
+    this.state.movies.map((movie, index)=>{
+      moviePosters.push(<Movie movies={movie}/>)
+    })
     return (
       <div className="App">
         <div className="App-header">
@@ -31,7 +35,7 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        {this.state.movie.map(function(movie, index){
+        {this.state.movies.map(function(movie, index){
 
         })}
       </div>
